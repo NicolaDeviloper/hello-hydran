@@ -5,7 +5,6 @@ import { UserService } from '../user.service';
 // BATCKTICKS = Alt + 096
 @Component({
   selector: 'app-users',
-  providers: [UserService],
   templateUrl: 'users.component.html',
   styleUrls: ['users.component.css'],
 })
