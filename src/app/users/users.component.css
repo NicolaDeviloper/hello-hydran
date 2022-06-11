@@ -2,13 +2,8 @@ table {
   border: 1px solid #c0c0c0;
 }
 
-td,
 th {
   padding: 5px;
-}
-
-td {
-  background-color: grey;
 }
 
 th {

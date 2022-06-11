@@ -1,17 +1,19 @@
 import { AnimationStyleMetadata } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
-// BATCKTICKS = Alt + 096
+// BACKTICK = Alt + 096
 @Component({
   selector: 'app-users',
   templateUrl: 'users.component.html',
   styleUrls: ['users.component.css'],
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
   public users: any[] = [];
 
-  constructor(private service: UserService) {
-    this.users = service.getUsers();
+  constructor(private service: UserService) {}
+
+  ngOnInit(): void {
+    this.users = this.service.getUsers();
   }
 }
