@@ -1,3 +1,13 @@
 p {
   font-family: Lato;
 }
+
+.users{
+  float: left;
+  width: 60%;
+}
+
+.userDetail{
+  float: left;
+  
+}

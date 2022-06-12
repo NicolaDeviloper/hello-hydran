@@ -1,5 +1,4 @@
-import { AnimationStyleMetadata } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { User } from '../interfaces/user';
 import { UserService } from '../services/user.service';
 
@@ -11,6 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class UsersComponent implements OnInit {
   public users: User[] = [];
+  @Output('updateUser') updateUser = new EventEmitter<User>();
 
   constructor(private service: UserService) {}
 
@@ -19,12 +19,13 @@ export class UsersComponent implements OnInit {
     this.users = this.service.getUsers();
   }
 
-  /*
-  onDeleteUser(user: any) {
+  onDeleteUser(user: User) {
+    //onDeleteUser(user: any) {
     this.service.deleteUser(user);
   }
-*/
-  onDeleteUser(user: User) {
-    this.service.deleteUser(user);
+
+  onSelectUser(user: User) {
+    console.log('selected user: ', user);
+    this.updateUser.emit(user);
   }
 }

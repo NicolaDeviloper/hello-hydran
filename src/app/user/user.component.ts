@@ -9,23 +9,35 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  @Input('user-data') user: User | undefined;
+  @Input('user-data') user: User;
 
   //per progagare l'evento al padre
-  @Output('onDeleteUSer') userDeleted = new EventEmitter();
+  @Output() onDeleteUser = new EventEmitter();
+  @Output('onSelectUser') onSelectUser = new EventEmitter();
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {
+    this.user = {
+      name: '',
+      lastname: '',
+      email: '',
+      fiscalcode: '',
+      province: '',
+      phone: '',
+      age: 35,
+    };
+  }
 
   ngOnInit() {}
 
-  deleteUser(user) {
-    //alert(user.lastname);
-    this.userService.deleteUser(user);
+  deleteUser() {
+    //deleteUser(user) {
+    //1) alert(user.lastname);
+    //2) this.userService.deleteUser(user);
+    this.onDeleteUser.emit(this.user);
   }
 
-  /* 
- deleteUser() {
-    alert(this.user.lastname);
+  updateUser() {
+    console.log(this.user);
+    this.onSelectUser.emit(this.user);
   }
-  */
 }
