@@ -6,10 +6,9 @@
   vertical-align: top;
 }
 .users {
-  float: left;
+  float: right;
   width: 60%;
 }
 .userDetail {
   float: left;
-  width: 40%;
 }
