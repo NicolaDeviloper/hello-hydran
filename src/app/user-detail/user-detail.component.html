@@ -1,4 +1,5 @@
 <form>
+  {{ user | json }}
   <div class="form-group">
     <label for="firstname">Firstname</label>
     <input name="firstname" id="firstname" />
@@ -26,6 +27,8 @@
 
   <div class="form-group form-footer">
     <button class="btn-save">SAVE</button>
-    <button (click)="click_annullaUserDetail()" class="btn-annulla">Annulla</button>
+    <button (click)="click_annullaUserDetail()" class="btn-annulla">
+      Annulla
+    </button>
   </div>
 </form>

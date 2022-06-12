@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from '../interfaces/user';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
+  @Input() user: User;
   @Output() onAnnullaUserDetail = new EventEmitter();
 
   constructor(private service: UserService) {}
