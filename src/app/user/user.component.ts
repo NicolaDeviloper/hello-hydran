@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
   //per progagare l'evento al padre
   @Output() onDeleteUser = new EventEmitter();
   @Output('onSelectUser') onSelectUser = new EventEmitter();
+  @Output('onAnnullaUserDetail') onAnnullaUserDetail = new EventEmitter();
 
   constructor(private userService: UserService) {
     this.user = {
@@ -29,14 +30,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {}
 
-  deleteUser() {
+  click_deleteUser() {
     //deleteUser(user) {
     //1) alert(user.lastname);
     //2) this.userService.deleteUser(user);
     this.onDeleteUser.emit(this.user);
   }
 
-  updateUser() {
+  click_updateUser() {
     console.log(this.user);
     this.onSelectUser.emit(this.user);
   }

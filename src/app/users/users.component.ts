@@ -12,6 +12,8 @@ export class UsersComponent implements OnInit {
   public users: User[] = [];
   @Output('updateUser') updateUser = new EventEmitter<User>();
 
+  @Output('onAnnullaUserDetail') onAnnullaUserDetail = new EventEmitter();
+
   constructor(private service: UserService) {}
 
   ngOnInit(): void {
@@ -19,12 +21,12 @@ export class UsersComponent implements OnInit {
     this.users = this.service.getUsers();
   }
 
-  onDeleteUser(user: User) {
+  event_onDeleteUser(user: User) {
     //onDeleteUser(user: any) {
     this.service.deleteUser(user);
   }
 
-  onSelectUser(user: User) {
+  event_onSelectUser(user: User) {
     console.log('selected user: ', user);
     this.updateUser.emit(user);
   }

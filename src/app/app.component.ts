@@ -7,10 +7,14 @@ import { User } from './interfaces/user';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
   userSelected: User | undefined;
 
-  updateUser(user: User) {
+  event_updateUser(user: User) {
     this.userSelected = user;
+  }
+
+  event_annullaUserDetail() {
+    alert('Annulla!');
+   // this.userSelected = undefined;
   }
 }

@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
+  @Output() onAnnullaUserDetail = new EventEmitter();
 
-  constructor() { }
+  constructor(private service: UserService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  click_annullaUserDetail() {
+    this.onAnnullaUserDetail.emit();
   }
-
 }
