@@ -19,4 +19,9 @@ export class AppComponent {
     alert('Annulla!');
     // this.userSelected = undefined;
   }
+
+  newUser() {
+    this.userSelected = new User();
+    this.showForm = true;
+  }
 }

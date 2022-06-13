@@ -8,10 +8,24 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
-  @Input() user: User;
+  private userCopy: User;
+  private __user: User;
+  @Input() set user(user: User) {
+    this.__user = user;
+    this.userCopy = Object.assign({}, user);
+  }
+  get user() {
+    return this.__user;
+  }
   @Output() onAnnullaUserDetail = new EventEmitter();
 
-  constructor(private service: UserService) {}
+  /*
+  userService: UserService;
+  constructor(service: UserService) {
+    this.userService = service;
+  }
+*/
+  constructor(private userService: UserService) {}
 
   ngOnInit() {}
 
@@ -20,6 +34,19 @@ export class UserDetailComponent implements OnInit {
   }
 
   saveUser() {
-    alert(this.user.name);
+    if (this.user.id > 0) {
+      this.userService.updateUser(this.user);
+    } else {
+      this.userService.createUser(this.user);
+    }
+  }
+
+  resetForm(form) {
+    if (this.user.id === 0) {
+      this.user = new User();
+    } else {
+      // form.reset();
+      this.user = this.userCopy;
+    }
   }
 }
