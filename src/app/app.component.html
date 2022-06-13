@@ -1,5 +1,9 @@
-<h2>Users Management System (UMS)</h2>
-<a href="#" (click)="newUser()">New User</a>
+<h2>
+  {{ 'users mAnAGEment SySTeM' | titlecase }}
+  {{ '(ums)' | uppercase }}
+</h2>
+<a href="#" (click)="newUser()">{{ 'New User' | lowercase }}</a>
+<p>{{ 'the quick brown fox jumped over the lazy doing' | ucfirst }}</p>
 <div class="main">
   <div class="users">
     <app-users
