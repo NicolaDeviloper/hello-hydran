@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { User } from './interfaces/user';
+import { User } from './classes/user';
 
 @Component({
   selector: 'my-app',
@@ -7,7 +7,7 @@ import { User } from './interfaces/user';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  userSelected: User | undefined;
+  userSelected: User = new User();
 
   event_updateUser(user: User) {
     this.userSelected = user;
@@ -15,6 +15,6 @@ export class AppComponent {
 
   event_annullaUserDetail() {
     alert('Annulla!');
-   // this.userSelected = undefined;
+    // this.userSelected = undefined;
   }
 }

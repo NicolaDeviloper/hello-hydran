@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { User } from '../interfaces/user';
+import { User } from '../classes/user';
 import { UserService } from '../services/user.service';
 
 // BACKTICK = Alt + 096
