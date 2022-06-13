@@ -5,6 +5,7 @@ import { User } from '../interfaces/user';
 export class UserService {
   users: User[] = [
     {
+      id: 1,
       name: 'Nicola',
       lastname: 'Sperone',
       email: 'ciaoo@gmail.com',
@@ -14,6 +15,7 @@ export class UserService {
       age: 35,
     },
     {
+      id: 2,
       name: 'Davide',
       lastname: 'Nuirbah',
       email: 'nuir@lycos.it',
@@ -23,6 +25,7 @@ export class UserService {
       age: 35,
     },
     {
+      id: 3,
       name: 'Beatrice',
       lastname: 'Spareow',
       email: 'beatnuo@gmail.com',
@@ -32,6 +35,7 @@ export class UserService {
       age: 34,
     },
     {
+      id: 4,
       name: 'Vito',
       lastname: 'Caparbi',
       email: 'f34@gmail.com',

@@ -18,6 +18,7 @@ export class UserComponent implements OnInit {
 
   constructor(private userService: UserService) {
     this.user = {
+      id: 0,
       name: '',
       lastname: '',
       email: '',
