@@ -8,6 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './services/user.service';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UcfirstPipe } from './ucfirst.pipe';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -17,6 +18,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     UsersComponent,
     UserComponent,
     UserDetailComponent,
+    UcfirstPipe,
   ],
   bootstrap: [AppComponent],
   providers: [UserService],
