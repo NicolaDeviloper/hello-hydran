@@ -18,4 +18,8 @@ export class UserDetailComponent implements OnInit {
   click_annullaUserDetail() {
     this.onAnnullaUserDetail.emit();
   }
+
+  saveUser() {
+    alert(this.user.name);
+  }
 }
